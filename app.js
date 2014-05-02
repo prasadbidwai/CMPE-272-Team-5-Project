@@ -2,12 +2,20 @@
 /**
  * Module dependencies.
  */
-
+/*****************************************************
+ * ******** Imports
+ *****************************************************/
 var express = require('express');
 var routes = require('./routes');
-var user = require('./routes/user');
+var stats = require('./routes/stats');
 var http = require('http');
 var path = require('path');
+
+/**********************Import Ends*******************************/
+
+/*****************************************************
+ * ******** Initialization
+ *****************************************************/
 
 var app = express();
 
@@ -28,8 +36,17 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+/********************** Initialization Ends *******************************/
+
+//app.get('/animalProfile.ejs', function(req, res) {res.render('animalProfile', req.body);});
+
+app.post('/animalProfile', function(req, res) {res.render('animalProfile', req.body);});
+
 app.get('/', routes.index);
-app.get('/users', user.list);
+app.get('/browse', routes.browse);
+app.get('/infographics', routes.infographics);
+app.get('/stats', stats.index);
+app.get('/animalInformation/:id',routes.showInformation);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
