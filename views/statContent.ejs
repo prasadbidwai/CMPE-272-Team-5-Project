@@ -1,48 +1,51 @@
+<div align="center" style="width:100%;position:absolute;top:79px">
+	<div class="label label-default" style="font-size:15px;z-index:99;">
+		Number of threatened species by major groups of animals (1996 - 2013)
+	</div>
+</div>
+
 <div align="center">
-	<div class="btn-group">
-		<div style="float:left">
-			<select id="countrySelect" class="form-control" onchange="countrySelected(this)">
+	<div style="width:70%;" align="left" >
+		<% 	if(data.dataCategory == 'country'){%>
+			<select id="countrySelect" class="form-control" style="width:400px" onchange="countrySelected(this)">
 				<option value="0"> Select a Country..</option>
-				<% for(var i=0; i < data.length; i++) { %>
-					<option value="<%=data[i].id%>"><%=data[i].name%></option>
+				<% for(var i=0; i < data.res.length; i++) { %>
+					<option value="<%=data.res[i].id%>"><%=data.res[i].name%></option>
 				<% } %>
 			</select>
-		</div> 
-		<div style="float:left">
-			<label style="padding-left:15px;padding-right:15px">OR</label>
-			<button type="button" class="btn btn-primary" style="width:400px;" id="worldMapBtn" onclick="selectWorldMap()">World Map</button>
-		</div>
+		<% }%>
 	</div>
-	
-	
-	<div class="btn-group" style="display:none;">
-	  	<button type="button" class="btn btn-primary">Animal Type</button>
-		<button type="button" class="btn btn-primary">Chart Type</button>
-	</div>
-	
+
 	<div>
-		<div id="animalTypeOptionDiv" class="optionDiv">
-			<input type="radio" value="mammals" name="animalType" onchange="updateChart(this)"/> <label style="vertical-align:top"> Mammal</label>
-			<input type="radio" value="birds" name="animalType" onchange="updateChart(this)"/> <label style="vertical-align:top"> Bird</label>
-			<input type="radio" value="fishes" name="animalType" onchange="updateChart(this)"/> <label style="vertical-align:top"> Fishes</label>
-			<input type="radio" value="reptiles" name="animalType" onchange="updateChart(this)"/> <label style="vertical-align:top"> Reptiles</label>
-			<input type="radio" value="amphibians" name="animalType" onchange="updateChart(this)"/> <label style="vertical-align:top"> Amphibian</label>
-		</div>
-		<div id="chartTypeOptionDiv" class="optionDiv">
-			<input type="radio" value="donut" name="chart" onclick="updateChart(this)" /> <label style="vertical-align:top;padding-right:10px;"> Donut Chart </label>
-			<input type="radio" value="pie" name="chart" onclick="updateChart(this)"/> <label style="vertical-align:top;padding-right:10px;"> Pie Chart</label>
-			<input type="radio" value="column" name="chart" onclick="updateChart(this)"/> <label style="vertical-align:top;padding-right:10px;"> Bar Chart</label>
-			
-		</div>
+		<% if(data.dataCategory == "country"){ %>
+			<div id="chartTypeOptionDiv" class="optionDiv" style="display:none">
+				<input type="radio" value="column" id="column" name="chart" onclick="updateChart(this)"/> <label style="vertical-align:top;padding-right:10px;"> Column Chart</label>
+				<input type="radio" value="donut" id="donut" name="chart" onclick="updateChart(this)" /> <label style="vertical-align:top;padding-right:10px;"> Donut Chart </label>
+				<input type="radio" value="pie" id="pie" name="chart" onclick="updateChart(this)"/> <label style="vertical-align:top;padding-right:10px;"> Pie Chart</label>
+			</div>
+		<% }else{ %>
+		    <div id="animalTypeOptionDiv" class="optionDiv">
+				<input type="radio" value="mammals" name="animalType" onchange="updateChart(this)" /> <label style="vertical-align:top"> Mammal</label>
+				<input type="radio" value="birds" name="animalType" onchange="updateChart(this)"/> <label style="vertical-align:top"> Bird</label>
+				<input type="radio" value="fishes" name="animalType" onchange="updateChart(this)"/> <label style="vertical-align:top"> Fishes</label>
+				<input type="radio" value="reptiles" name="animalType" onchange="updateChart(this)"/> <label style="vertical-align:top"> Reptiles</label>
+				<input type="radio" value="amphibians" name="animalType" onchange="updateChart(this)"/> <label style="vertical-align:top"> Amphibian</label>
+			</div>
+	    <% } %>
 	</div>
 		
 	<div id="container" style="border:1px solid #EEEEEE; width:100%;height:78%; margin-top:5px;">
 		<div id="purpose" class="chartLabel">
-			Threatened species in each country
+			Threatened  species in each country
 		</div>
 		<div id="charts" style="width:100%;height:100%">
-		
+			<div class="blankMessage" style="font-size: 32px;">
+			<% if(data.dataCategory == "country"){ %>
+				Please select a country and then a graph you are interested in.
+			<% }else{ %>
+				World map will appear here. Please select a category you are interested in
+			<% } %>
+			</div>
 		</div>	
 	</div>	
-		
 </div>
