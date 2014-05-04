@@ -1,24 +1,58 @@
-<% layout('statistics') -%>
-
-<div style="width:20%;height:80%;float:left">
-	<div class="list-group">
-	  <a href="#" class="list-group-item active">
-		Cras justo odio
+<html>
+	<head>
+		<% include head %>
+	</head>
+<body>
+	<% include navigationBar %>
+	<br/><br/><br/>
+	
+	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+	<!-- Indicators -->
+  	<ol class="carousel-indicators">
+    	<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    	<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    	<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    	<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+  	</ol>
+	
+	<!-- Wrapper for slides -->
+	<div class="carousel-inner">
+	    <div class="item active">
+	      <img src="./images/Amur Leopard.jpeg" alt="...">
+	      <div class="carousel-caption">
+	        ...
+	      </div>
+	    </div>
+	    <div class="item">
+	      <img src="./images/Leatherback Turtle.jpg" alt="...">
+	      <div class="carousel-caption">
+	        ...
+	      </div>
+	    </div>
+	    <div class="item">
+	      <img src="./images/Orangutan.jpg" alt="...">
+	      <div class="carousel-caption">
+	        ...
+	      </div>
+	    </div>
+	    .<div class="item">
+	      <img src="./images/royal-bangal-tiger.jpg" alt="...">
+	      <div class="carousel-caption">
+	        ...
+	      </div>
+	    </div>.
+	  </div>
+	
+	  <!-- Controls -->
+	  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+	    <span class="glyphicon glyphicon-chevron-left"></span>
 	  </a>
-	  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-	  <a href="#" class="list-group-item">Morbi leo risus</a>
-	  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-	  <a href="#" class="list-group-item">Vestibulum at eros</a>
+	  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+	    <span class="glyphicon glyphicon-chevron-right"></span>
+	  </a>
 	</div>
-</div>
-<div style="border:1px solid #EEEEEE;border-radius:5px;width:58%;height:80%;margin-left:10px;float:left">
-	<div style="">
-		Sufficient Data Not Available
-	</div>
-</div>
-<div style="width:20%;float:right">
-	<div class="list-group">
-	  <a href="#" class="list-group-item active">World Map</a>
-	  <a href="#" class="list-group-item">Pie Chart</a>
-	</div>
-</div>
+	 
+	
+</body>
+</html>
+
