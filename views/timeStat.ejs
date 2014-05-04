@@ -1,0 +1,27 @@
+<div align="center" style="width:100%;position:absolute;top:79px">
+	<div class="label label-default" style="font-size:15px;z-index:99;">
+		Number of threatened species by major groups of animals (1996 - 2013)
+	</div>
+</div>		
+<div>
+	<div id="animalTypeOptionDiv" class="optionDiv" align="center">
+		<input type="checkbox" value="Mammals" name="animalTypeTime" onchange="updateTimeChart(this)" /> 
+			<label style="vertical-align:top"> Mammal</label>
+		<input type="checkbox" value="Birds" name="animalTypeTime" onchange="updateTimeChart(this)"/> 
+			<label style="vertical-align:top"> Bird</label>
+		<input type="checkbox" value="Fishes" name="animalTypeTime" onchange="updateTimeChart(this)"/> 
+			<label style="vertical-align:top"> Fishes</label>
+		<input type="checkbox" value="Reptiles" name="animalTypeTime" onchange="updateTimeChart(this)"/> 
+			<label style="vertical-align:top"> Reptiles</label>
+		<input type="checkbox" value="Amphibians" name="animalTypeTime" onchange="updateTimeChart(this)"/> 
+			<label style="vertical-align:top"> Amphibian</label>
+	</div>
+	<div id="container" style="border:1px solid #EEEEEE; width:100%;height:78%; margin-top:5px;">
+		<div id="charts" style="width:100%;height:100%">
+			<div class="blankMessage" style="font-size: 32px;">
+				Please select an animal group(s).
+			</div>
+		</div>
+		
+	</div>
+</div>

@@ -39,7 +39,19 @@
 
 .optionDiv {
 	margin-top:5px;
-	width: 45%;
+	width: 100%;
 	border: 1px solid #EEEEEE;
 	padding: 5px;
 }
+
+.inset-text {
+          font-size: 32px;
+          color: #333333;
+          text-shadow: 1px 1px 0px #EEEEEE;
+          font-weight: bold;
+     }
+     
+ .blankMessage{
+ 	font-size: 25px;
+ 	padding-top:50px;
+ }

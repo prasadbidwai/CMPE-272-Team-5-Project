@@ -1,0 +1,16 @@
+<div class="animalProfileLabel">
+	<h2><%= data[0].common_name%></h2>
+	<span class="animalProfileSubHeader">Scientific Name : <%=data[0].scientific_name%></span> <br/>
+</div>
+<div>
+	<img src="/images/<%= data[0].common_name%>.jpg" width="1000px" height="500px" alt="not available"/>
+</div>
+<div style="color:#EEEEEE" style="float:left">
+	<p style="text-align:justify;width:50%"><%= data[0].information%></p>
+	<br/>
+	
+	Population : <%=data[0].population%><br/>
+	Conservation Status : <%=data[0].threat_status%><br/>
+	Threats : <%=data[0].threats%><br/>
+	Solutions : <%=data[0].solutions%><br/>
+</div>
