@@ -421,5 +421,11 @@ function getArrayForTimeLineData(collectionJSON){
 	
 	return mainArr;
 }
+function initInfographics(){
+	  $(document).ready(function(){
+          $('.least-gallery').least();
+      });
+}
+
 
 
