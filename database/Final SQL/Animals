@@ -10,7 +10,7 @@ CREATE TABLE `Animals` (
   `information` varchar(3000) DEFAULT NULL,
   PRIMARY KEY (`identifier`),
   KEY `threat_status_id_fk_idx` (`threat_status`)
-) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=utf8;
+) ;
 
 
 INSERT INTO Animals(common_name, scientific_name,threat_status,population,habitat,threats,solutions,information) VALUES ('Amur Leopard','Panthera pardus orientalis','Critically Endangered','Around 30','Temperate, Broadleaf, and Mixed Forests','Prey scarcity, Illegal wildlife trade, poaching by human in their habitat','Protecting habitat,Stopping illegal trade by enforcing strong regulations,                                   Population monitoring','People usually think of leopards in the savannas of Africa but in the Russian Far East, a rare subspecies has adapted to life in the temperate forests that make up the northern-most part of the species  range. Similar to other leopards, the Amur leopard can run at speeds of up to 37 miles per hour. This incredible animal has been reported to leap more than 19 feet horizontally and up to 10 feet vertically.');

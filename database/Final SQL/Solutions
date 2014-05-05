@@ -3,7 +3,7 @@ CREATE TABLE `Solutions` (
   `context` varchar(100) DEFAULT NULL,
   `actions` varchar(300) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
+) ;
 
 
 
