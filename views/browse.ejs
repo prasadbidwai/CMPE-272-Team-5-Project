@@ -4,39 +4,18 @@
 	</head>
 <body onload="init()">
 	<% include navigationBar %>
+	
 	<div class="container-fluid" style>
 		<div class="row">
 			<div class="col-sm-3 col-md-2 sidebar" id="navigation">
 				<ul class="nav nav-sidebar">
 					<% for(var i=0; i<animals.length; i++) {%>
-						<li id="<%=animals[i].identifier%>"><a href="#" ><%=animals[i].common_name%></a></li>
+						<li><a href="#" id="<%=animals[i].identifier%>"><%=animals[i].common_name%></a></li>
 					<%} %>
 				</ul>
 			</div>
-			
-			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-				<div id="main-content">
-				<img src="./images/background/Amur Leopard.jpg" alt="Smiley face" height="200" width="200" id="img_1">
-				<img src="./images/background/Black Rhino.jpg" alt="Smiley face" height="200" width="200" id="img_2">
-				<img src="./images/background/Cross River Gorilla.jpg" alt="Smiley face" height="200" width="200" id="img_3">
-				<img src="./images/background/Hawksbill Turtle.jpg" alt="Smiley face" height="200" width="200" id="img_4">
-				<img src="./images/background/Javan Rhino.jpg" alt="Smiley face" height="200" width="200" id="img_5">
-				<img src="./images/background/Leatherback Turtle.jpg" alt="Smiley face" height="200" width="200" id="img_6">
-				<img src="./images/background/Mountain Gorilla.jpg" alt="Smiley face" height="200" width="200" id="img_7">
-				<img src="./images/background/Saola.jpg" alt="Smiley face" height="200" width="200" id="img_8">
-				<img src="./images/background/South China Tiger.jpg" alt="Smiley face" height="200" width="200" id="img_9">
-				<img src="./images/background/Sumatran Elephant.jpg" alt="Smiley face" height="200" width="200" id="img_10">
-				<img src="./images/background/Sumatran Rhino.jpg" alt="Smiley face" height="200" width="200" id="img_11">
-				<img src="./images/background/Sumatran Tiger.jpg" alt="Smiley face" height="200" width="200" id="img_12">
-				<img src="./images/background/Vaquita.jpg" alt="Smiley face" height="200" width="200" id="img_13">
-				<img src="./images/background/Western Lowland Gorilla.jpg" alt="Smiley face" height="200" width="200" id="img_14">
-				<img src="./images/background/Yangtze Finless Porpoise.jpg" alt="Smiley face" height="200" width="200" id="img_15">
-				<img src="./images/background/African Wild Dog.jpg" alt="Smiley face" height="200" width="200" id="img_16">
-				<img src="./images/background/Amur Tiger.jpg" alt="Smiley face" height="200" width="200" id="img_17">
-				<img src="./images/background/Asian Elephant.jpg" alt="Smiley face" height="200" width="200" id="img_18">
-				<img src="./images/background/Bengal Tiger.jpg" alt="Smiley face" height="200" width="200" id="img_19">
-				<img src="./images/background/Black Spider Monkey.jpg" alt="Smiley face" height="200" width="200" id="img_20">
-				</div>
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" >
+				<div id="main-content"></div>
 			</div>
 		</div>	
 	</div>

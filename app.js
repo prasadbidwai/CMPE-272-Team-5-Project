@@ -43,15 +43,20 @@ if ('development' == app.get('env')) {
 
 app.post('/animalProfile', function(req, res) {res.render('animalProfile', req.body);});
 app.post('/statContent', function(req, res) {res.render('statContent', req.body);});
+app.post('/conservationStat', function(req, res) {res.render('conservationStat', req.body);});
+app.post('/timeStat', function(req, res) {res.render('timeStat', req.body);});
 
 app.get('/', routes.index);
 app.get('/browse', routes.browse);
 app.get('/infographics', routes.infographics);
 app.get('/stats', stats.index);
-app.get('/statPageInfo',routes.statPageInfo);
+app.get('/statPageInfo/:dataCategory',routes.statPageInfo);
 app.get('/animalInformation/:id',routes.showInformation);
-app.get('/worldInformation/:animalType',routes.worldInformation);
+app.get('/worldInformation/animalType/:animalType',routes.worldInfoAnimalType);
+app.get('/worldInformation/conservationStatus/:conservationStatus',routes.worldInfoConservationStatus);
 app.get('/chartInformation/:countryCode',routes.chartInformation);
+app.get('/conStatusChartInfo/:countryCode', routes.conStatusChartInfo);
+app.get('/timeLineChartInfo/:animalTypes', routes.timeLineChartInfo);
 app.get('/solutions', routes.solutions);
 
 http.createServer(app).listen(app.get('port'), function(){
