@@ -80,9 +80,9 @@ function showAnalyseDataOptions() {
 function countrySelected(obj){
 	countryCode = obj.value;
 	if(countryCode == 0){
-		$("#chartTypeOptionDiv").hide(400);
+		$("#chartTypeOptionDiv").slideUp(400);
 	}else{
-		$("#chartTypeOptionDiv").show(400);
+		$("#chartTypeOptionDiv").slideDown(400);
 		
 	}
 }
@@ -90,8 +90,8 @@ function countrySelected(obj){
 function selectWorldMap(){
 	countryCode = 0;
 	$("#countrySelect").val(0);
-	$("#animalTypeOptionDiv").show(400);
-	$("#chartTypeOptionDiv").hide(400);
+	$("#animalTypeOptionDiv").slideDown(400);
+	$("#chartTypeOptionDiv").slideUp(400);
 }
 
 function initCharts() {
@@ -107,7 +107,7 @@ function initCharts() {
 	google.setOnLoadCallback(function() {
 	});
 	
-	$('.nav-tabs').button();
+
 }
 
 
@@ -123,7 +123,7 @@ function updateChart(obj){
 		}
 	}else{ //
 		if($(obj).is(":checked")){
-			if(obj.name=="conStatusChart"){
+			if(obj.name=="conservationStatusChart"){
 				drawGraphs(obj.value,"/conStatusChartInfo/"+countryCode,obj.name);
 			}else{
 				drawGraphs(obj.value,"/chartInformation/"+countryCode,obj.name);
@@ -421,11 +421,5 @@ function getArrayForTimeLineData(collectionJSON){
 	
 	return mainArr;
 }
-function initInfographics(){
-	  $(document).ready(function(){
-          $('.least-gallery').least();
-      });
-}
-
 
 
