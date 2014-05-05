@@ -1,57 +1,54 @@
-<div align="center" style="position:absolute;top:79px; float:right">
-	<div class="label label-default" style="font-size:15px;z-index:99;">
-		Total count of animals as per their conservation status in the below selected country.
-	</div>
-</div>
-
 <div align="center">
-	<div style="width:70%;" align="left" >
+	
 		<% 	if(data.dataCategory == 'country'){%>
-			<select id="countrySelect" class="form-control" style="width:400px" onchange="countrySelected(this)">
-				<option value="0"> Select a Country..</option>
-				<% for(var i=0; i < data.res.length; i++) { %>
-					<option value="<%=data.res[i].id%>"><%=data.res[i].name%></option>
-				<% } %>
-			</select>
+			<div style="width:100%;height:25px;">
+				<div style="float:left;margin-left:15%;">
+					<select id="countrySelect" class="form-control" style="width:400px" onchange="countrySelected(this)">
+						<option value="0"> Select a Country..</option>
+						<% for(var i=0; i < data.res.length; i++) { %>
+							<option value="<%=data.res[i].id%>"><%=data.res[i].name%></option>
+						<% } %>
+					</select>
+				</div>
+				<div id="chartTypeOptionDiv" class="optionDiv" style="display:none">
+					<input type="radio" value="column" id="column"  name="conservationStatusChart" onclick="updateChart(this)" id="column"/> 
+						<label style="vertical-align:top;padding-right:10px;" for="column"> Column Chart</label>
+					<input type="radio" value="donut" id="donut" name="conservationStatusChart" onclick="updateChart(this)" id="donut"/> 
+						<label style="vertical-align:top;padding-right:10px;" for="donut"> Donut Chart </label>
+					<input type="radio" value="pie" id="pie" name="conservationStatusChart" onclick="updateChart(this)" id="pie"/> 
+						<label style="vertical-align:top;padding-right:10px;" for="pie"> Pie Chart</label>
+				</div>
+			</div>
 		<% }%>
-	</div>
+	
 
 	<div>
-		<% if(data.dataCategory == "country"){ %>
-			<div id="chartTypeOptionDiv" class="optionDiv" style="display:none">
-				<input type="radio" value="column" id="column"  name="conservationStatusChart" onclick="updateChart(this)"/> 
-					<label style="vertical-align:top;padding-right:10px;"> Column Chart</label>
-				<input type="radio" value="donut" id="donut" name="conservationStatusChart" onclick="updateChart(this)" /> 
-					<label style="vertical-align:top;padding-right:10px;"> Donut Chart </label>
-				<input type="radio" value="pie" id="pie" name="conservationStatusChart" onclick="updateChart(this)"/> 
-					<label style="vertical-align:top;padding-right:10px;"> Pie Chart</label>
-			</div>
-		<% }else{ %>
+		<% if(data.dataCategory != "country"){ %>
 			<div id="animalTypeOptionDiv" class="optionDiv">
-				<input type="radio" value="extinct" name="conservationStatus" onchange="updateChart(this)"/> 
-					<label style="vertical-align:top"> Extinct</label>
-				<input type="radio" value="critically_endangered" name="conservationStatus" onchange="updateChart(this)"/> 
-					<label style="vertical-align:top"> Critically Endangered</label>
-				<input type="radio" value="endangered" name="conservationStatus" onchange="updateChart(this)"/> 
-					<label style="vertical-align:top"> Endangered</label>
-				<input type="radio" value="vulnerable" name="conservationStatus" onchange="updateChart(this)"/> 
-					<label style="vertical-align:top"> Vulnerable</label>
-				<input type="radio" value="near_threatened" name="conservationStatus" onchange="updateChart(this)"/> 
-					<label style="vertical-align:top"> Near Threatened</label>
+				<input type="radio" value="extinct" name="conservationStatus" onchange="updateChart(this)" id="extinct"/> 
+					<label style="vertical-align:top" for="extinct"> Extinct</label>
+				<input type="radio" value="critically_endangered" name="conservationStatus" onchange="updateChart(this)" id="ce"/> 
+					<label style="vertical-align:top" for="ce"> Critically Endangered</label>
+				<input type="radio" value="endangered" name="conservationStatus" onchange="updateChart(this)" id="en"/> 
+					<label style="vertical-align:top" for="en"> Endangered</label>
+				<input type="radio" value="vulnerable" name="conservationStatus" onchange="updateChart(this)" id="vul"/> 
+					<label style="vertical-align:top" for="vul"> Vulnerable</label>
+				<input type="radio" value="near_threatened" name="conservationStatus" onchange="updateChart(this)" id="nt"/> 
+					<label style="vertical-align:top" for="nt"> Near Threatened</label>
 			</div>
 		<% } %>
 	</div>
 		
-	<div id="container" style="border:1px solid #EEEEEE; width:100%;height:78%; margin-top:5px;">
-		<div id="purpose" class="chartLabel">
-			Threatened species in each country
+	<div id="container" style="border:1px solid #EEEEEE; width:100%;height:78%; margin-top:30px;">
+		<div id="purpose" class="label label-default" style="font-size:15px;z-index:99;">
+			Below graphical presentation shows total count of threatened animals as per their conservation status in the below selected country.
 		</div>
-		<div id="charts" style="width:100%;height:100%">
+		<div id="charts" style="width:100%;height:100%;margin-top:5px;">
 			<div class="blankMessage" style="font-size: 32px;">
 				<% if(data.dataCategory == "country"){ %>
 					Please select country for generating different charts
 				<% }else{ %>
-					World map will appear here as you select category you are interested in
+					World map will appear here. Please select a category you are interested in
 				<% } %>
 			</div>
 		</div>	
