@@ -24,7 +24,7 @@ function init() {
 		$("#main-content").hide(400);
 		obj = e.currentTarget;
 		
-		ajaxCall('/animalInformation/' + e.target.id,"GET",function(response){
+		ajaxCall('/animalInformation/' + e.currentTarget.id,"GET",function(response){
 			$("#main-content").load("animalProfile", {data : response}, function(response, status, xhr) {});
 			$("#main-content").show(400);
 		});
