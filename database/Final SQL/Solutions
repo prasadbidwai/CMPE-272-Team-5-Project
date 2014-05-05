@@ -1,7 +1,7 @@
 CREATE TABLE `Solutions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `context` varchar(100) DEFAULT NULL,
-  `actions` varchar(300) DEFAULT NULL,
+  `solutions` varchar(300) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ;
 
