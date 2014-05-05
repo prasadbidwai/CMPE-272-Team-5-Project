@@ -80,7 +80,7 @@ exports.chartInformation = function(req,res){
 exports.solutions = function(req,res){
 	//var id = req.param("id");
 	//console.log("==================================="+countryCode);
-	var sql = "select c.id,c.context,c.actions from solutions c";
+	var sql = "select c.id,c.context,c.solutions from solutions c";
 	console.log(sql);
 	mysql.executeQuery(sql, function(err, results) {
 		console.log(results);
