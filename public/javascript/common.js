@@ -258,3 +258,10 @@ function drawPieChart(data) {
 	};
 	pieChart.draw(data, options);
 }
+
+function initInfographics(){
+	  $(document).ready(function(){
+          $('.least-gallery').least();
+      });
+}
+
