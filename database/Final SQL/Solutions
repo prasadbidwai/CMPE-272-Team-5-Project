@@ -1,0 +1,42 @@
+CREATE TABLE `Solutions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `context` varchar(100) DEFAULT NULL,
+  `solutions` varchar(300) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ;
+
+
+
+INSERT INTO Solutions(context,solutions) VALUES ('Site/Area Protection','Establishing or expanding public or private parks, reserves, and other protected areas');
+INSERT INTO Solutions(context,solutions) VALUES ('Resource & Habitat Protection','Establishing protection or easements of some specific aspect of the resource on public or private lands');
+INSERT INTO Solutions(context,solutions) VALUES ('Site/Area Management','Management of protected areas and other resource lands for conservation');
+INSERT INTO Solutions(context,solutions) VALUES ('Invasive/Problematic Species Control','Controlling and/or preventing invasive and/or other problematic plants, animals, and pathogens');
+INSERT INTO Solutions(context,solutions) VALUES ('Habitat & Natural Process Restoration','Enhancing degraded or restoring missing habitats and ecosystem functions; dealing with pollution');
+INSERT INTO Solutions(context,solutions) VALUES ('Species Management','Managing specific plant and animal populations of concern');
+INSERT INTO Solutions(context,solutions) VALUES ('Harvest Management','Harvest management of wild mushrooms, setting fishing quotas, seting catch-size limits, etc.');
+INSERT INTO Solutions(context,solutions) VALUES ('Trade Management','setting harvest quotas, trade regulations for specific populations, non CITES trade regulations, aquarium trade regulation, regulation of trade in non-timber forest products, etc.');
+INSERT INTO Solutions(context,solutions) VALUES ('Limiting Population growth','culling buffalo to keep population size within park carrying capacity, sterilization of animals, etc.');
+INSERT INTO Solutions(context,solutions) VALUES ('Species Recovery','Manipulating, enhancing or restoring specific plant and animal populations, vaccination programs');
+INSERT INTO Solutions(context,solutions) VALUES ('Species Re-Introduction','Re-introducing species to places where they formally occurred or benign introductions');
+INSERT INTO Solutions(context,solutions) VALUES ('Ex-situ Conservation','Protecting biodiversity out of its native habitats');
+INSERT INTO Solutions(context,solutions) VALUES ('Captive Breeding/Artificial Propagation','captive breeding of animals, propagation of plants from seeds or cuttings, artificial propagation of plants, etc.');
+INSERT INTO Solutions(context,solutions) VALUES ('Genome Resource Bank','gene-banking, cryopreservation, etc.');
+INSERT INTO Solutions(context,solutions) VALUES ('Formal Education','Enhancing knowledge and skills of students in a formal degree programme');
+INSERT INTO Solutions(context,solutions) VALUES ('Training','Enhancing knowledge, skills and information exchange for practitioners, stakeholders, and other relevant individuals in structured settings outside of degree programmes');
+INSERT INTO Solutions(context,solutions) VALUES ('Awareness & Communications','Raising environmental awareness and providing information through various media or through civil disobedience');
+INSERT INTO Solutions(context,solutions) VALUES ('Legislation','Making, implementing, changing, influencing, or providing input into formal government sector legislation or polices at all levels: international, national, state/provincial, local, tribal');
+INSERT INTO Solutions(context,solutions) VALUES ('International Level Legislation','List the type of legislation and the specific action being taken e.g.,
+promoting conventions on biodiversity, wildlife trade laws like CITES, regional legislation like the European Habitats Directive, etc.');
+INSERT INTO Solutions(context,solutions) VALUES ('National Level Legislation','List the type of legislation and the specific action being taken e.g.,
+work for or against government laws such as the US Endangered Species Act, influencing legislative appropriations, etc.');
+INSERT INTO Solutions(context,solutions) VALUES ('Policies & Regulations','Making, implementing, changing, influencing, or providing input into policies and regulations affecting the implementation of laws at all levels: international, national, state/provincial, local/community, tribal');
+INSERT INTO Solutions(context,solutions) VALUES ('Private Sector Standards & Codes','Setting, implementing, changing, influencing, or providing input into voluntary standards & professional codes that govern private sector practice');
+INSERT INTO Solutions(context,solutions) VALUES ('Compliance & Enforcement','Monitoring and enforcing compliance with laws, policies & regulations, and standards & codes at all levels');
+INSERT INTO Solutions(context,solutions) VALUES ('Linked Enterprises & Livelihood Alternatives','Developing enterprises that directly depend on the maintenance of natural resources or provide substitute livelihoods as a means of changing behaviours and attitudes');
+INSERT INTO Solutions(context,solutions) VALUES ('Substitution','Promoting alternative products and services that substitute for environmentally damaging ones');
+INSERT INTO Solutions(context,solutions) VALUES ('Market Forces','Using market mechanisms to change behaviours and attitudes');
+INSERT INTO Solutions(context,solutions) VALUES ('Conservation Payments','Using direct or indirect payments to change behaviours and attitudes');
+INSERT INTO Solutions(context,solutions) VALUES ('Non-Monetary Values','Using intangible values to change behaviours and attitudes');
+INSERT INTO Solutions(context,solutions) VALUES ('Institutional & Civil Society Development','Creating or providing non-financial support & capacity building for non-profits, government agencies, communities, and for-profits');
+INSERT INTO Solutions(context,solutions) VALUES ('Alliance & Partnership Development','Forming and facilitating partnerships, alliances, and networks of organizations');
+INSERT INTO Solutions(context,solutions) VALUES ('Conservation Finance','Raising and providing funds for conservation work');

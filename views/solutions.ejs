@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<% include head %>
+	</head>
+<body>
+	<% include navigationBar %>
+	<div align="center">
+		
+		<div class="panel-group" id="accordion" style="width:50%">
+			<% for(var i=0; i<data.length; i++) {%>
+			  <div class="panel panel-default">
+			    <div class="panel-heading">
+			      <h4 class="panel-title">
+			        
+			        <a data-toggle="collapse" data-parent="#accordion" href="#<%= data[i].id %>">
+		        	<%=data[i].context%>
+		        </a>
+		     	 </h4>
+		    </div>
+		    <div id="<%=data[i].id%>" class="panel-collapse collapse">
+		      <div class="panel-body">
+		        <%=data[i].actions%>
+		      </div>
+		    </div>
+		  </div>
+		  <%} %>
+		</div>	
+</div>
+</body>
+</html>
