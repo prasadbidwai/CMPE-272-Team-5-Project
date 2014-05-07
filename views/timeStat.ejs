@@ -1,5 +1,5 @@
 
-
+<!--
 <div>
 	<div id="animalTypeOptionDiv" align="center" style="width:100%">
 		<input type="checkbox" value="Mammals" name="animalTypeTime" onchange="updateTimeChart(this)" /> 
@@ -24,3 +24,30 @@
 		</div>
 	</div>
 </div>
+-->
+
+<div class="jumbotron" align="left" id="jumbo" style="padding-left:15px;">
+  <p>
+	 <h3 id="header">Step 1: Please select animal class(es) for which you want to see the time series data : </h3>	
+	 <div id="animalTypeOptionDiv" style="width:100%">
+		<input type="checkbox" value="Mammals" name="animalTypeTime" onchange="updateTimeChart(this)" /> 
+			<label style="vertical-align:top"> Mammal</label>
+		<input type="checkbox" value="Birds" name="animalTypeTime" onchange="updateTimeChart(this)"/> 
+			<label style="vertical-align:top"> Bird</label>
+		<input type="checkbox" value="Fishes" name="animalTypeTime" onchange="updateTimeChart(this)"/> 
+			<label style="vertical-align:top"> Fishes</label>
+		<input type="checkbox" value="Reptiles" name="animalTypeTime" onchange="updateTimeChart(this)"/> 
+			<label style="vertical-align:top"> Reptiles</label>
+		<input type="checkbox" value="Amphibians" name="animalTypeTime" onchange="updateTimeChart(this)"/> 
+			<label style="vertical-align:top"> Amphibian</label>
+	</div>
+  </p>
+</div>
+
+<div id="container" style="border:0px solid #EEEEEE;margin-top:0px;" align="center">
+		<div id="purpose" class="label label-default" style="font-size:15px;z-index:99;display:none">
+			Number of threatened species by major groups of animals (1996 - 2013)
+		</div>
+		<div id="charts" style="width:100%;height:75%;margin-top:5px;">
+		</div>
+	</div>
