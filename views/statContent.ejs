@@ -1,8 +1,13 @@
-<div align="center">
+
+<div class="jumbotron" align="left" id="jumbo" style="padding-left:15px;">
 	
-		<% 	if(data.dataCategory == 'country'){%>
-		<div style="width:100%;height:25px;">
-			<div style="float:left;margin-left:15%;">
+ 
+  <p>
+	<%if(data.dataCategory == 'country'){%>
+	 <h3 id="header">Step 1: Select a country for which you want to get statistical data : </h3>	
+		<div id="inputControl" style="width:100%;z-index:99">
+			<div class="input-group" id="countryTxt">
+				<span class="input-group-addon">Country</span>
 				<select id="countrySelect" class="form-control" style="width:400px" onchange="countrySelected(this)">
 					<option value="0"> Select a Country..</option>
 					<% for(var i=0; i < data.res.length; i++) { %>
@@ -11,37 +16,32 @@
 				</select>
 			</div>
 			<div id="chartTypeOptionDiv" class="optionDiv" style="display:none;">
+				<h3 id="header2">Step 2: Please select type of Graphical presentation.</h3>
 				<input type="radio" value="column" id="column" name="chart" onclick="updateChart(this)" id="column"/> <label for="column" style="vertical-align:top;padding-right:10px;"> Column Chart</label>
 				<input type="radio" value="donut" id="donut" name="chart" onclick="updateChart(this)" id="donut"/> <label for="donut" style="vertical-align:top;padding-right:10px;"> Donut Chart </label>
 				<input type="radio" value="pie" id="pie" name="chart" onclick="updateChart(this)" id="pie"/> <label for="pie" style="vertical-align:top;padding-right:10px;"> Pie Chart</label>
 			</div>
 		</div>
-		<% }%>
-	
-	<div>
-		<% if(data.dataCategory == "world"){ %>
-		    <div id="animalTypeOptionDiv" class="optionDiv">
-				<input type="radio" value="mammals" name="animalType" onchange="updateChart(this)" id="mammal" /> <label style="vertical-align:top" for="mammal"> Mammal</label>
-				<input type="radio" value="birds" name="animalType" onchange="updateChart(this)" id="bird"/> <label style="vertical-align:top" for="bird"> Bird</label>
-				<input type="radio" value="fishes" name="animalType" onchange="updateChart(this)" id="fishes"/> <label style="vertical-align:top" for="fishes"> Fishes</label>
-				<input type="radio" value="reptiles" name="animalType" onchange="updateChart(this)" id="reptiles"/> <label style="vertical-align:top" for="reptiles"> Reptiles</label>
-				<input type="radio" value="amphibians" name="animalType" onchange="updateChart(this)" id="amphibian"/> <label style="vertical-align:top" for="amphibian"> Amphibian</label>
-			</div>
-	    <% } %>
-	</div>
-		
-	<div id="container" style="border:1px solid #EEEEEE; width:100%;height:78%; margin-top:30px;">
-		<div id="purpose" class="label label-default" style="font-size:15px;z-index:99;display:none">
-			Below graphical presentation shows total count of threatened animals as per their class.
+	<% }%>
+	<% if(data.dataCategory == "world"){ %>
+		<h3 id="header">Please select an Animal Class for which you want to see the data in world map </h3>	
+		<div id="animalTypeOptionDiv" class="optionDiv">
+			<input type="radio" value="mammals" name="animalType" onchange="updateChart(this)" id="mammal" /> <label style="vertical-align:top" for="mammal"> Mammal</label>
+			<input type="radio" value="birds" name="animalType" onchange="updateChart(this)" id="bird"/> <label style="vertical-align:top" for="bird"> Bird</label>
+			<input type="radio" value="fishes" name="animalType" onchange="updateChart(this)" id="fishes"/> <label style="vertical-align:top" for="fishes"> Fishes</label>
+			<input type="radio" value="reptiles" name="animalType" onchange="updateChart(this)" id="reptiles"/> <label style="vertical-align:top" for="reptiles"> Reptiles</label>
+			<input type="radio" value="amphibians" name="animalType" onchange="updateChart(this)" id="amphibian"/> <label style="vertical-align:top" for="amphibian"> Amphibian</label>
 		</div>
-		<div id="charts" style="width:100%;height:100%;margin-top:5px;">
-			<div class="blankMessage" style="font-size: 32px;">
-				<% if(data.dataCategory == "country"){ %>
-					Please select a country and then a graph you are interested in.
-				<% }else{ %>
-					Please select an animal class of your interest.
-				<% } %>
-			</div>
-		</div>	
+	<% } %>
+  </p>
+</div>  
+
+<div id="container" style="border:0px solid #EEEEEE;display:none; margin-top:0px;" align="center">
+	<div id="purpose" class="label label-info" style="font-size:15px;z-index:99;display:none" align="center">
+		Shows total count of threatened animals as per their class.
+	</div>
+	<div id="charts" style="width:100%;height:75%;margin-top:5px;">
+		<img src="images/loading.gif" style="height:200px;width:200px"/>
 	</div>	
-</div>
+</div>	
+

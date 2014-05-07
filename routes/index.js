@@ -47,7 +47,7 @@ exports.worldInfoConservationStatus = function(req,res){
 
 exports.statPageInfo = function(req, res){
 	var dataCategory = req.param("dataCategory");
-	
+	console.log("----");
 	if(dataCategory == "country"){
 		var sql = "select c.id, c.name from country c";
 		mysql.executeQuery(sql, function(err, results) {
@@ -61,6 +61,18 @@ exports.statPageInfo = function(req, res){
 exports.infographics = function(req, res) {
 	res.render("infographics", {
 		title : 'Infographics'
+	});
+}
+
+exports.TicketApp = function(req, res) {
+	res.render("ticketing_app", {
+		title : 'Ticketing App'
+	});
+}
+
+exports.aboutUs = function(req, res) {
+	res.render("aboutUs", {
+		title : 'About Us'
 	});
 }
 
@@ -115,11 +127,6 @@ exports.solutions = function(req,res){
 			});
 	});
 }
-
-
-
-
-
 
 
 
