@@ -58,6 +58,9 @@ app.get('/chartInformation/:countryCode',routes.chartInformation);
 app.get('/conStatusChartInfo/:countryCode', routes.conStatusChartInfo);
 app.get('/timeLineChartInfo/:animalTypes', routes.timeLineChartInfo);
 app.get('/solutions', routes.solutions);
+app.get('/aboutUs', routes.aboutUs);
+app.get('/TicketApp', routes.TicketApp);
+
 
 http.createServer(app).listen(app.get('port'), function(){
 

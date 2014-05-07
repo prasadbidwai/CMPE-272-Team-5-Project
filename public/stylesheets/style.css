@@ -1,3 +1,21 @@
+a.ticketing_app
+{
+	float: right;
+	position: fixed;
+	top: 262px;
+	left: 0px;
+	padding: 10px;
+	background-color: #2fa4e7;
+	z-index: 20;
+	color: white;
+}
+
+div.box
+{
+	margin: 0 auto;
+	width: 780px;
+}
+
 .animalProfileLabel {
 	position: absolute;
 	background-color: #333333;

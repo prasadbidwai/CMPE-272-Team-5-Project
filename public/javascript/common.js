@@ -51,6 +51,7 @@ function init() {
 }
 
 function selectAnalysisCategory(type, dataCat) {
+
 	dataCategory = dataCat;
 	informationType = type;
 	$("#selectCategoryDiv").slideUp(function() {
@@ -72,7 +73,6 @@ function selectAnalysisCategory(type, dataCat) {
 			$("#statsContent").load("conservationStat", {data : data}, function(response, status, xhr) {});
 		});
 	}else{
-		console.log("------------------------------------");
 		ajaxCall('/statPageInfo/'+dataCat,"GET",function(response){
 			$("#statsContent").load("timeStat", {data : response}, function(response, status, xhr) {});
 		});
@@ -132,26 +132,48 @@ function updateChart(obj){
 	$("#purpose").show();
 	if(obj.name == "animalType"){
 		if($(obj).is(":checked")){
-			drawGeoChart('/worldInformation/animalType/' + obj.value,'#267114');
+			$("#header").hide(500);
+			document.getElementById("jumbo").className="";
+			$("#container").slideDown(500,function(){
+				drawGeoChart('/worldInformation/animalType/' + obj.value,'#267114');
+			});
 		}
 	}else if(obj.name == "conservationStatus"){
 		if($(obj).is(":checked")){
-			drawGeoChart('/worldInformation/conservationStatus/' + obj.value,'#993333');
+			$("#header").hide(500);
+			document.getElementById("jumbo").className="";
+			$("#container").slideDown(500,function(){
+				drawGeoChart('/worldInformation/conservationStatus/' + obj.value,'#993333');
+			});
 		}
 	}else{ //
 		if($(obj).is(":checked")){
 			if(obj.name=="conservationStatusChart"){
-				drawGraphs(obj.value,"/conStatusChartInfo/"+countryCode,obj.name);
+				adjustUIForChart();
+				$("#container").slideDown(500,function(){
+					drawGraphs(obj.value,"/conStatusChartInfo/"+countryCode,obj.name);
+				});
 			}else{
-				drawGraphs(obj.value,"/chartInformation/"+countryCode,obj.name);
+				adjustUIForChart();
+				$("#container").slideDown(500,function(){
+					drawGraphs(obj.value,"/chartInformation/"+countryCode,obj.name);	
+				});
 			}
 		}
 	}
 }
 
+function adjustUIForChart(){
+	$("#header").hide(500);
+	$("#header2").hide(500);
+	document.getElementById("jumbo").className="";
+	document.getElementById("chartTypeOptionDiv").style.width="45%";
+	document.getElementById("countryTxt").style.width="45%";
+}
+
+
 function updateTimeChart(obj){
 	$("#purpose").show();
-	$("#info").html("Gathering information from countries please wait ....");
 	if($(obj).is(":checked")){
 		selectedAnimalTypes.push(obj.value);
 	}else{
@@ -163,7 +185,15 @@ function updateTimeChart(obj){
 	}
 	
 	if(selectedAnimalTypes.length > 0){
-		drawLineChart(selectedAnimalTypes);
+		$("#header").hide(500);
+		document.getElementById("jumbo").className="";
+		$("#container").slideDown(500,function(){
+			drawLineChart(selectedAnimalTypes);
+		});
+	}else{
+		$("#header").show(500);
+		document.getElementById("jumbo").className="jumbotron";
+		$("#container").slideUp(500);
 	}
 }
 
@@ -261,7 +291,8 @@ function createArrayForGraphConStatus(data){
 function drawGeoChart(url,color) {
 	$.ajax({
 		type : 'GET',
-		url : url
+		url : url,
+		asynch:false
 	}).done(function(response) {
 		delete geochart;
 		geochart = new google.visualization.GeoChart(document
