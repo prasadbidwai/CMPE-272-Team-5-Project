@@ -13,7 +13,7 @@
 				</select>
 			</div>
 			<div id="chartTypeOptionDiv" class="optionDiv" style="display:none;">
-				<h3 id="header2">Step 2: Please select type of Graphical presentation.</h3>
+				<h3 id="header2">Step 2: Select type of Graphical presentation.</h3>
 				<input type="radio" value="column" id="column" name="conservationStatusChart" onclick="updateChart(this)" id="column"/> <label for="column" style="vertical-align:top;padding-right:10px;"> Column Chart</label>
 				<input type="radio" value="donut" id="donut" name="conservationStatusChart" onclick="updateChart(this)" id="donut"/> <label for="donut" style="vertical-align:top;padding-right:10px;"> Donut Chart </label>
 				<input type="radio" value="pie" id="pie" name="conservationStatusChart" onclick="updateChart(this)" id="pie"/> <label for="pie" style="vertical-align:top;padding-right:10px;"> Pie Chart</label>
@@ -21,7 +21,7 @@
 		</div>
 	<% }%>
 	<% if(data.dataCategory != "country"){ %>
-			<h3 id="header">Please select a conservation status for which you want to see the data :</h3>	
+			<h3 id="header">Select a conservation status for which you want to see the data :</h3>	
 			<div id="animalTypeOptionDiv" class="optionDiv">
 				<input type="radio" value="extinct" name="conservationStatus" onchange="updateChart(this)" id="extinct"/> 
 					<label style="vertical-align:top" for="extinct"> Extinct</label>
@@ -40,7 +40,7 @@
 
 <div id="container" style="border:0px solid #EEEEEE;display:none; margin-top:0px;" align="center">
 	<div id="purpose" class="label label-info" style="font-size:15px;z-index:99;display:none" align="center">
-		Shows total count of threatened animals as per their conservations status.
+		Country-wise count of threatened animals as per their conservations status.
 	</div>
 	<div id="charts" style="width:100%;height:75%;margin-top:5px;">
 		<img src="images/loading.gif" style="height:200px;width:200px"/>
