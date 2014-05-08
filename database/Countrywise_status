@@ -1,7 +1,7 @@
 CREATE TABLE countrywise_status(
   id INT NOT NULL AUTO_INCREMENT,
-  country_id INT default null,
-extinct INTEGER
+  country_id INT default null
+, extinct INTEGER
 , critically_endangered INTEGER
 , endangered INTEGER
 , vulnerable INTEGER

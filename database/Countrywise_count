@@ -1,7 +1,7 @@
 CREATE TABLE countrywise_count(
 id INT NOT NULL AUTO_INCREMENT,
-country_id INT default null,
- mammals INTEGER
+country_id INT default null
+, mammals INTEGER
 , birds INTEGER
 , reptiles INTEGER
 , amphibians INTEGER
