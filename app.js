@@ -8,9 +8,11 @@
 var express = require('express');
 var routes = require('./routes');
 var stats = require('./routes/stats');
-var cache = require('./modules/cache');
 var http = require('http');
 var path = require('path');
+var Redis = require("./modules/redis-cache");
+var Constants = require('./modules/constants');
+var mysql = require("./modules/mysqlcontroller");
 
 /**********************Import Ends*******************************/
 
@@ -63,6 +65,18 @@ app.get('/TicketApp', routes.TicketApp);
 
 
 http.createServer(app).listen(app.get('port'), function(){
-
-  console.log('Express server listening on port ' + app.get('port'));
+	console.log('Express server listening on port ' + app.get('port'));
+	
+	mysql.executeSQL(Constants.SELECT_ANIMALS_QUERY, function(err, result) {
+//		console.log(result);
+		Redis.cacheAnimals(result);
+	});
+	mysql.executeSQL(Constants.SELECT_COUNTRY_QUERY, function(err, result) {
+//		console.log(result);
+		Redis.cacheCountries(result);
+	});
+	mysql.executeSQL(Constants.SELECT_SOLUTIONS_QUERY, function(err, result) {
+//		console.log(result);
+		Redis.cacheSolutions(result);
+	});
 });

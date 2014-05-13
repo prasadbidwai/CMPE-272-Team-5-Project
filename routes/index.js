@@ -1,4 +1,5 @@
 var mysql = require("../modules/mysqlController");
+var Constants = require("../modules/constants");
 
 exports.index = function(req, res) {
 	res.render('index', {
@@ -7,8 +8,8 @@ exports.index = function(req, res) {
 };
 
 exports.browse = function(req, res) {
-	var sql = "select identifier,common_name from animals";
-	mysql.executeQuery(sql, function(err, results) {
+	//var sql = "select identifier,common_name from animals";
+	mysql.executeQuery(Constants.SELECT_ANIMALS_QUERY, function(err, results) {
 		res.render('browse', {
 			title : 'Browse',
 			animals : results
@@ -49,8 +50,8 @@ exports.statPageInfo = function(req, res){
 	var dataCategory = req.param("dataCategory");
 	console.log("----");
 	if(dataCategory == "country"){
-		var sql = "select c.id, c.name from country c";
-		mysql.executeQuery(sql, function(err, results) {
+		//var sql = "select c.id, c.name from country c";
+		mysql.executeQuery(Constants.SELECT_COUNTRY_QUERY, function(err, results) {
 			res.send(results);
 		});
 	}else{
@@ -116,9 +117,9 @@ exports.timeLineChartInfo= function(req,res){
 exports.solutions = function(req,res){
 	//var id = req.param("id");
 	//console.log("==================================="+countryCode);
-	var sql = "select c.id,c.context,c.solutions from solutions c";
-	console.log(sql);
-	mysql.executeQuery(sql, function(err, results) {
+	//var sql = "select c.id,c.context,c.solutions from solutions c";
+	//console.log(sql);
+	mysql.executeQuery(Constants.SELECT_SOLUTIONS_QUERY, function(err, results) {
 		console.log(results);
 		
 		res.render("solutions",{
